@@ -1,4 +1,4 @@
-Pointer:
+Pointer solution:
 void reverseString(char* s, int sSize)
 {
     int i;
@@ -12,7 +12,7 @@ void reverseString(char* s, int sSize)
     return s;
 }
 
-Array:
+Array solution:
 void reverseString(char* s, int sSize)
 {
     
