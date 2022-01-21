@@ -1,0 +1,22 @@
+bool comp(char* s1, char* s2) {
+    while(*s2) {
+        if(*s2 != *s1)
+            return false;
+        s1++;
+        s2++;
+    }
+    return true;
+}
+int strStr(char* haystack, char* needle) {
+    int len1 = strlen(haystack), len2 = strlen(needle);
+    if(len2 == 0)
+        return 0;
+    int i = 0; 
+    for(i = 0; i + len2 <= len1; i++) {
+        if(comp(haystack + i, needle))
+            return i;
+    }
+    return -1;
+
+
+解法：用兩個指標，分別指向短字串及常字串，透過兩個字串比較來找出相同字元數量，利用strlen紀錄字串長度，若長度為0則output 0，for迴圈做字元比較，找到相同字元則輸出i，其餘則為-1。
