@@ -1,0 +1,28 @@
+bool isPalindrome(char * s){
+    
+    int i = 0;
+    int j = strlen(s)-1;
+
+    while(i < j)
+    {
+        if(!(s[i]>=48 && s[i]<=57 || s[i]>=65 && s[i]<=90 || s[i]>=97 && s[i]<=122))
+        {
+            i++;
+            continue;
+        }
+        if(!(s[j]>=48 && s[j]<=57 || s[j]>=65 && s[j]<=90 || s[j]>=97 && s[j]<=122))
+        {
+            j--;
+            continue;
+        }
+        if(toupper(s[i]) != toupper(s[j]))
+        {
+            return false;
+        }
+        i++;
+        j--;
+    }
+    return true;
+}    
+解法：利用前後逼近，將前半段的非字元及非數字紀錄下來，再將後半段的非字元及非數字減掉
+，剩下的為字母或數字，在經過大寫轉換後如果不相同即false，反之為true。
