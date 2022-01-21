@@ -1,0 +1,17 @@
+int reverse(int x)
+{
+    int ans = 0;
+    
+    while(x != 0)
+    {
+        if ( ans > INT_MAX / 10 || ans < INT_MIN / 10 ) return 0;
+        else if (ans == INT_MAX / 10 || ans == INT_MIN / 10 )
+        {
+            if ( x % 10 > 7 || x % 10 < -8 ) return 0;
+        } 
+        ans = ans * 10 + x % 10;	ans乘10作為進位 x%10為個位數
+        x /= 10;
+    }    
+    return ans;
+}
+解法：以數學方式解，須考慮到溢位問題。
